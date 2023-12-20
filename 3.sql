@@ -67,7 +67,7 @@ create table покупатель_история (
     id serial primary key,
     имя varchar(30) check (имя != ''),
     фамилия varchar(30) check (фамилия != ''),
-    номер_телефона text not null unique,
+    номер_телефона text not null,
     id_любимый_магазин integer references магазин(id_магазин) on delete set default,
     id_покупатель integer not null references покупатель(id_покупатель) on delete cascade,
     дата_обновления timestamp not null default(current_date)
