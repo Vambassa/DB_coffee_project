@@ -23,7 +23,7 @@ create table покупатель (
     имя varchar(30) check (имя != ''),
     фамилия varchar(30) check (фамилия != ''),
     номер_телефона text not null unique,
-    id_любимый_магазин integer default(0) 
+    id_любимый_магазин integer references магазин(id_магазин) on delete set null
 );
 
 
