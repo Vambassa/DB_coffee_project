@@ -33,7 +33,7 @@ create table заказ(
     id_заказ serial primary key,
     сумма money not null,
 	дата timestamp not null,
-	статус varchar(30) default('В обработке') check (статус in ('В обработке', 'Принят', 'Сформирован', 'Отправлен', 'Выполнен')),
+	статус varchar(30) default('В обработке') check (статус in ('В обработке', 'Принят', 'Сформирован', 'Отправлен', 'Выполнен', 'Отменен')),
     id_покупатель integer not null references покупатель(id_покупатель) on delete cascade,
 	id_магазин integer references магазин(id_магазин) on delete cascade
 );
